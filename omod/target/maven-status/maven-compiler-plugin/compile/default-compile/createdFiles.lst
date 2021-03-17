@@ -1,2 +1,2 @@
-org/openmrs/module/ehraddons/extension/html/AdminList.class
-org/openmrs/module/ehraddons/web/controller/EHRaddonController.class
+org\openmrs\module\ehraddons\web\controller\EHRaddonController.class
+org\openmrs\module\ehraddons\extension\html\AdminList.class

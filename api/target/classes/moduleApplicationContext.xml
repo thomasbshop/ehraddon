@@ -61,6 +61,7 @@
                 <ref bean="ehraddons.common.715a" />
                 <ref bean="ehraddons.common.715b" />
                 <ref bean="ehraddons.common.717" />
+                <ref bean="ehraddons.common.labadults" />
 
             </set>
         </property>
@@ -97,4 +98,18 @@
             </set></property>
         <property name="template" value="ehraddons:MOH_705b.xls" />
     </bean>
+    <bean id="ehraddons.common.labadults" class="org.openmrs.module.kenyacore.report.HybridReportDescriptor">
+        <property name="targetUuid" value="d5fa8d01-8670-11eb-a47f-086266b602c9" />
+        <property name="name" value="Laboratory Results Report for adults" />
+        <property name="description" value="Laboratory Results Report for adults Report" />
+        <property name="apps">
+            <set>
+                <ref bean="kenyaemr.app.reports" />
+            </set></property>
+        <property name="template" value="ehraddons:labadults.xls" />
+        <property name="repeatingSection" value="sheet:1,row:11,dataset:allPatients | sheet:2,row:11,dataset:activePatients " />
+    </bean>
+
+
+
 </beans>

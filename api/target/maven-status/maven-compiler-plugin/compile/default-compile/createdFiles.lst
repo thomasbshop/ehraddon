@@ -1,10 +1,2 @@
-org/openmrs/module/ehraddons/EHRaddonConfig.class
-org/openmrs/module/ehraddons/reports/indicator/Moh705aCohortQueries.class
-org/openmrs/module/ehraddons/api/impl/EHRaddonServiceImpl.class
-org/openmrs/module/ehraddons/reports/SetupMOH705bReport.class
-org/openmrs/module/ehraddons/EHRaddonActivator.class
-org/openmrs/module/ehraddons/api/EHRaddonService.class
-org/openmrs/module/ehraddons/api/dao/EHRaddonDao.class
-org/openmrs/module/ehraddons/reports/SetupMOH705aReport.class
-org/openmrs/module/ehraddons/reports/indicator/Moh705aIndicators.class
-org/openmrs/module/ehraddons/reports/SetupMOH717Report.class
+org\openmrs\module\ehraddons\api\EHRaddonService.class
+org\openmrs\module\ehraddons\reports\SetupMOH717Report.class
