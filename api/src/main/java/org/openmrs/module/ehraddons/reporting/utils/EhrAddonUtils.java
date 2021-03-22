@@ -1,11 +1,28 @@
 package org.openmrs.module.ehraddons.reporting.utils;
 
 import org.openmrs.module.kenyaemr.reporting.ColumnParameters;
+import org.openmrs.module.reporting.evaluation.parameter.Mapped;
+import org.openmrs.module.reporting.evaluation.parameter.ParameterizableUtil;
+import org.openmrs.module.reporting.evaluation.parameter.Parameterizable;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class EhrAddonUtils {
+	
+	/**
+	 * @param parameterizable
+	 * @param mappings
+	 * @param <T>
+	 * @return
+	 */
+	public static <T extends Parameterizable> Mapped<T> map(T parameterizable, String mappings) {
+		if (parameterizable == null) {
+			throw new IllegalArgumentException("Parameterizable cannot be null");
+		}
+		String m = mappings != null ? mappings : ""; // probably not necessary, just to be safe
+		return new Mapped<T>(parameterizable, ParameterizableUtil.createParameterMappings(m));
+	}
 	
 	public static List<ColumnParameters> getAdultChildrenColumns() {
 		ColumnParameters day1 = new ColumnParameters("day1", "Day 1", "day=1");
@@ -42,4 +59,5 @@ public class EhrAddonUtils {
 		return Arrays.asList(day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, day13, day14, day15,
 		    day16, day17, day18, day19, day20, day21, day22, day23, day24, day25, day26, day27, day28, day29, day30, day31);
 	}
+	
 }
