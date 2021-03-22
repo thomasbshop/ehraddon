@@ -5,6 +5,26 @@ import org.openmrs.api.context.Context;
 
 public class EhrAddonsConstants {
 	
+	public static final String ADULTINITIAL_OUTPATIENT = "";
+	
+	public static final String ADULTRETURN_OUTPATIENT = "";
+	
+	public static final String PEDSINITIAL_OUTPATIENT = "";
+	
+	public static final String PEDSRETURN_OUTPATIENT = "";
+	
+	public static final String REGINITIAL_OUTPATIENT = "";
+	
+	public static final String REGREVISIT_OUTPATIENT = "";
+	
+	public static final String TRIAGE = "f26a9c62-4047-4381-9a4e-46e2cddbe663"; //Id 165387
+	
+	public static final String OPD_WARD = "70285bed-156b-47ed-9704-493f10149e84"; //Id 165379
+	
+	public static final String CASUALTY_OPD = "b5cf9357-7d96-41e2-8393-113925d41179"; //Id 	165381
+	
+	public static final String CASUALTY_TRIAGE = "bd2764c6-3348-407a-a85a-f1ef6ceba766"; //Id 165415 
+	
 	public final class _EhrAddOnConceptClasses {
 		
 		public static final String DIAGNOSIS_CLASS = "8d4918b0-c2cc-11de-8d13-0010c6dffd0f"; // 4
