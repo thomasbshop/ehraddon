@@ -96,7 +96,7 @@
             <set>
                 <ref bean="kenyaemr.app.reports" />
             </set></property>
-        <property name="template" value="ehraddons:MOH_705b.xls" />
+        <property name="template" value="ehraddons:MOH_717.xls" />
     </bean>
     <bean id="ehraddons.common.report.labadults" class="org.openmrs.module.kenyacore.report.HybridReportDescriptor">
         <property name="targetUuid" value="f85b114a-86eb-11eb-9eda-eb0964963ce6" />

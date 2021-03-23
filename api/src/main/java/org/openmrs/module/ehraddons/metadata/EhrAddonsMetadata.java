@@ -1,6 +1,5 @@
 package org.openmrs.module.ehraddons.metadata;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.logging.Log;
@@ -37,9 +36,9 @@ public class EhrAddonsMetadata {
 	public ConceptClass getDiagnosisConceptClass() {
 		return Context.getConceptService().getConceptClassByUuid(EhrAddonsConstants._EhrAddOnConceptClasses.DIAGNOSIS_CLASS);
 	}
-
+	
 	protected static final Log log = LogFactory.getLog(EhrAddonsMetadata.class);
-
+	
 	/** @return the PatientIdentifier that matches the passed uuid, name, or primary key id */
 	public static PatientIdentifierType getPatientIdentifierType(String lookup) {
 		PatientIdentifierType pit = Context.getPatientService().getPatientIdentifierTypeByUuid(lookup);
@@ -57,7 +56,7 @@ public class EhrAddonsMetadata {
 		}
 		return pit;
 	}
-
+	
 	/**
 	 * @return the Concept that matches the passed uuid, name, source:code mapping, or primary key
 	 *         id
@@ -87,7 +86,7 @@ public class EhrAddonsMetadata {
 		}
 		return c;
 	}
-
+	
 	/**
 	 * @return the List of Concepts that matches the passed comma-separated list of concept lookups
 	 * @see EhrAddonsMetadata#getConcept(String)
@@ -102,7 +101,7 @@ public class EhrAddonsMetadata {
 		}
 		return l;
 	}
-
+	
 	/**
 	 * @return the List of Concepts that matches the passed any separated list of concept lookups
 	 * @see EhrAddonsMetadata#getConcept(String)
@@ -121,7 +120,7 @@ public class EhrAddonsMetadata {
 		}
 		return l;
 	}
-
+	
 	/** @return the Form that matches the passed uuid, name, or primary key id */
 	public static Form getForm(String lookup) {
 		Form form = Context.getFormService().getFormByUuid(lookup);
@@ -139,7 +138,7 @@ public class EhrAddonsMetadata {
 		}
 		return form;
 	}
-
+	
 	/**
 	 * @return the List of Forms that matches the passed comma-separated list of Form lookups
 	 * @see EhrAddonsMetadata#getForm(String)
@@ -154,7 +153,7 @@ public class EhrAddonsMetadata {
 		}
 		return l;
 	}
-
+	
 	/**
 	 * @return the List of Forms that matches the passed any separated list of Form lookups
 	 * @see EhrAddonsMetadata#getForm(String)
@@ -173,7 +172,7 @@ public class EhrAddonsMetadata {
 		}
 		return l;
 	}
-
+	
 	/** @return the EncounterType that matches the passed uuid, name, or primary key id */
 	public static EncounterType getEncounterType(String lookup) {
 		EncounterType et = Context.getEncounterService().getEncounterTypeByUuid(lookup);
@@ -189,10 +188,10 @@ public class EhrAddonsMetadata {
 		if (et == null) {
 			throw new ConfigurableMetadataLookupException("Unable to find EncounterType using key: " + lookup);
 		}
-
+		
 		return et;
 	}
-
+	
 	/**
 	 * @return the List of EncounterTypes that matches the passed comma-separated list of Encounter
 	 *         lookups
@@ -208,7 +207,7 @@ public class EhrAddonsMetadata {
 		}
 		return l;
 	}
-
+	
 	/**
 	 * @return the List of EncounterTypes that matches the passed any separated list of Encounter
 	 *         lookups
@@ -228,7 +227,7 @@ public class EhrAddonsMetadata {
 		}
 		return l;
 	}
-
+	
 	/** @return the RelationshipType that matches the passed uuid, name, or primary key id */
 	public static RelationshipType getRelationshipType(String lookup) {
 		RelationshipType rt = Context.getPersonService().getRelationshipTypeByUuid(lookup);
@@ -246,7 +245,7 @@ public class EhrAddonsMetadata {
 		}
 		return rt;
 	}
-
+	
 	/** @return the Location that matches the passed uuid, name, or primary key id */
 	public static Location getLocation(String lookup) {
 		Location et = Context.getLocationService().getLocationByUuid(lookup);
@@ -262,10 +261,10 @@ public class EhrAddonsMetadata {
 		if (et == null) {
 			throw new MetadataLookupException("Unable to find Location using key: " + lookup);
 		}
-
+		
 		return et;
 	}
-
+	
 	/** @return the PersonAttributeType that matches the passed uuid, name, or primary key id */
 	public static PersonAttributeType getPersonAttributeType(String lookup) {
 		PersonAttributeType et = Context.getPersonService().getPersonAttributeTypeByUuid(lookup);
@@ -281,7 +280,7 @@ public class EhrAddonsMetadata {
 		if (et == null) {
 			throw new MetadataLookupException("Unable to find PersonAttributeType using key: " + lookup);
 		}
-
+		
 		return et;
 	}
 }

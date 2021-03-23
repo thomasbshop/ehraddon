@@ -13,7 +13,8 @@
  */
 package org.openmrs.module.ehraddons.metadata;
 
-import org.springframework.stereotype.Component;
-
-@Component("commonMetadata")
-public class CommonMetadata extends EhrAddonsMetadata {}
+//
+//import org.springframework.stereotype.Component;
+//
+//@Component("commonMetadata")
+//public class CommonMetadata extends EhrAddonsMetadata {}
