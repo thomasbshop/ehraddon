@@ -69,10 +69,11 @@ public class OutpatientMetadata extends ProgramsMetadata {
 	//        return getEncounterType(EhrAddonsConstants.ANC_ENCOUNTER);
 	//    }
 	//
-	//    // Concepts 5082
-	//    public Concept getSpecialClinicConcept() {
-	//        return getConcept(EhrAddonsConstants.SPECIAL_CLINIC);
-	//    }
+	// Concepts 5082
+	public Concept getSpecialClinicConcept() {
+		return getConcept(EhrAddonsConstants.SPECIAL_CLINIC);
+	}
+	
 	//
 	//    // Concepts 5119
 	//    public Concept getENTClinicConcept() {
@@ -190,6 +191,7 @@ public class OutpatientMetadata extends ProgramsMetadata {
 	public Concept getCasualityTriageConcept() {
 		return getConcept(EhrAddonsConstants.CASUALTY_TRIAGE);
 	}
+	
 	//
 	//    // 5709
 	//    public Concept getDentalOpdConcept() {
@@ -211,15 +213,16 @@ public class OutpatientMetadata extends ProgramsMetadata {
 	//        return getConcept(EhrAddonsConstants.REGISTRATION_FEE);
 	//    }
 	//
-	//    // 009
-	//    public Concept getNewPatientConcept() {
-	//        return getConcept(EhrAddonsConstants.NEW_PATIENT);
-	//    }
+	// 009
+	public Concept getNewPatientConcept() {
+		return getConcept(EhrAddonsConstants.NEW_PATIENT);
+	}
+	
 	//
-	//    // 945
-	//    public Concept getRevisitConcept() {
-	//        return getConcept(EhrAddonsConstants.REVISIT);
-	//    }
+	// 945
+	public Concept getRevisitConcept() {
+		return getConcept(EhrAddonsConstants.REVISIT);
+	}
 	//
 	//    // Get all diarrhoea concepts
 	//    public Concept getAcuteDiarrhoea() {

@@ -25,6 +25,12 @@ public class EhrAddonsConstants {
 	
 	public static final String CASUALTY_TRIAGE = "bd2764c6-3348-407a-a85a-f1ef6ceba766"; //Id 165415 
 	
+	public static final String SPECIAL_CLINIC = "f5c89e8c-c79e-4e20-9048-b7ef8f30b272";
+	
+	public static final String NEW_PATIENT = "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	
+	public static final String REVISIT = "206688b1-421b-431e-9a02-14c4273c238d";
+	
 	public final class _EhrAddOnConceptClasses {
 		
 		public static final String DIAGNOSIS_CLASS = "8d4918b0-c2cc-11de-8d13-0010c6dffd0f"; // 4
