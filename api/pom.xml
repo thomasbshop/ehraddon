@@ -15,23 +15,24 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.openmrs.module</groupId>
-			<artifactId>kenyaemr-api</artifactId>
-			<version>17.0.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openmrs.module</groupId>
 			<artifactId>kenyacore-api</artifactId>
-			<version>2.4.1</version>
+			<version>${kenyacoreVersion}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openmrs.module</groupId>
 			<artifactId>calculation-api</artifactId>
-			<version>1.1</version>
+			<version>${calculationVersion}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openmrs.module</groupId>
 			<artifactId>reporting-api</artifactId>
-			<version>0.9.8.1</version>
+			<version>${reportingVersion}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>uiframework-api</artifactId>
+			<version>${uiframeworkVersion}</version>
+		</dependency>
+
 	</dependencies>
 </project>

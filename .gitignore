@@ -10,6 +10,9 @@ target/*
 .idea
 .DS_Store
 .vscode
+ api/ehraddons-api.iml
+ omod/ehraddons-omod.iml
+ *.xml
 
 # Log file
 *.log

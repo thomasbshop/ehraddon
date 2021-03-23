@@ -13,16 +13,16 @@
 	<description>Omod submodule for EHR add on</description>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.openmrs.module</groupId>
-			<artifactId>uiframework-api</artifactId>
-			<version>3.3.1</version>
-		</dependency>
         <dependency>
             <groupId>org.openmrs.module</groupId>
             <artifactId>ehraddons-api</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>uiframework-api</artifactId>
+			<version>${uiframeworkVersion}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.openmrs.web</groupId>
 			<artifactId>openmrs-web</artifactId>

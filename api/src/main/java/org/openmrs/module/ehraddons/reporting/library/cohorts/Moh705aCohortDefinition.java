@@ -18,13 +18,6 @@ import java.util.List;
 @Component
 public class Moh705aCohortDefinition {
 	
-	private EhrAddonsMetadata ehrAddonsMetadata;
-	
-	@Autowired
-	public Moh705aCohortDefinition(EhrAddonsMetadata ehrAddonsMetadata) {
-		this.ehrAddonsMetadata = ehrAddonsMetadata;
-	}
-	
 	/**
 	 * Get adult patients who have given diagnosis - MOH705A
 	 * 
@@ -35,7 +28,7 @@ public class Moh705aCohortDefinition {
 		cd.setName("Get children patients who have diagnosis based on list of concepts");
 		cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
 		cd.addParameter(new Parameter("endDate", "End Date", Date.class));
-		cd.setQuery(Moh705Queries.getChildrenPatientsWhoMatchDiagnosisBasedOnConcepts(ehrAddonsMetadata
+		cd.setQuery(Moh705Queries.getChildrenPatientsWhoMatchDiagnosisBasedOnConcepts(EhrAddonsMetadata
 		        .getDiagnosisConceptClass().getConceptClassId(), list));
 		return cd;
 	}

@@ -1,7 +1,6 @@
 package org.openmrs.module.ehraddons.reporting.library.indicator;
 
 import org.openmrs.module.ehraddons.reporting.library.cohorts.Moh705aCohortDefinition;
-import org.openmrs.module.ehraddons.reports.indicator.Moh705aCohortQueries;
 import org.openmrs.module.reporting.indicator.CohortIndicator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

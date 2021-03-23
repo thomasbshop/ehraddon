@@ -22,10 +22,6 @@ import org.openmrs.module.ehraddons.EhrAddonsConstants;
 //import org.openmrs.module.reporting.common.ObjectUtil;
 import org.springframework.stereotype.Component;
 
-//import java.util.ArrayList;
-//import java.util.List;
-
-@Component
 public class EhrAddonsMetadata {
 	
 	/**
@@ -33,7 +29,7 @@ public class EhrAddonsMetadata {
 	 * 
 	 * @return ConceptClass
 	 */
-	public ConceptClass getDiagnosisConceptClass() {
+	public static ConceptClass getDiagnosisConceptClass() {
 		return Context.getConceptService().getConceptClassByUuid(EhrAddonsConstants._EhrAddOnConceptClasses.DIAGNOSIS_CLASS);
 	}
 	

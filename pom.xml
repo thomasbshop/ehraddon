@@ -99,7 +99,7 @@
 		<kenyaemrVersion>17.0.3</kenyaemrVersion>
 		<calculationVersion>1.1</calculationVersion>
 		<reportingVersion>0.9.8.1</reportingVersion>
-		<uiframeworkVersion>3.3.1</uiframeworkVersion>
+		<uiframeworkVersion>3.8</uiframeworkVersion>
 		<serializationxstreamVersion>0.2.7</serializationxstreamVersion>
     </properties>
 </project>
