@@ -17,27 +17,16 @@ import org.openmrs.module.reporting.dataset.definition.DataSetDefinition;
 import org.openmrs.module.reporting.indicator.CohortIndicator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Moh717Dataset extends EhrAddOnBaseDataSet {
-	
-	@Autowired
-	private EhrCommonDimension ehrCommonDimension;
 	
 	@Autowired
 	private EhrGeneralIndicator ehrGeneralIndicator;
 	
 	@Autowired
 	private Moh717CohortDefination moh717CohortDefination;
-	
-	@Autowired
-	private OutpatientMetadata outpatientMetadata;
-	
-	@Autowired
-	private CommonLibrary commonLibrary;
-	
-	@Autowired
-	@Qualifier("commonAgeDimensionCohort")
-	private AgeDimensionCohortInterface ageDimensionCohort;
 	
 	public DataSetDefinition constructCustomDataset() {
 		CustomConfigurationsDataDefinition df = new CustomConfigurationsDataDefinition();
@@ -53,7 +42,7 @@ public class Moh717Dataset extends EhrAddOnBaseDataSet {
 		dsd.setName("MOH 717 Data Set");
 		dsd.addParameters(getParameters());
 		// Tie dimensions to this data definition
-		dsd.addDimension("gender", EhrAddonUtils.map(ehrCommonDimension.gender(), ""));
+		/*dsd.addDimension("gender", EhrAddonUtils.map(ehrCommonDimension.gender(), ""));
 		dsd.addDimension("age", EhrAddonUtils.map(ehrCommonDimension.age(ageDimensionCohort), "effectiveDate=${endDate}"));
 		dsd.addDimension("state", EhrAddonUtils.map(ehrCommonDimension.state(), "endDate=${endDate}"));
 		// add your dataset here, construct it here
@@ -301,13 +290,6 @@ public class Moh717Dataset extends EhrAddOnBaseDataSet {
 		    over5YearsFemaleN, over5YearsFemaleR, under5YearsFemaleN, under5YearsFemaleR, over60YearsNew,
 		    over60YearsReattendance, totalFemale);
 	}
-	
-	//	private List<EhrAddOnColumnParameters> getSpecialClinicsEhrAddOnColumnParameters() {
-	//		EhrAddOnColumnParameters NEW_CASES = new EhrAddOnColumnParameters("new_cases", "NEW", "state=NEW", "01");
-	//		EhrAddOnColumnParameters REVISIT_CASES = new EhrAddOnColumnParameters("revisit_cases", "REVISIT", "state=RVT", "02");
-	//		EhrAddOnColumnParameters TOTAL_CASES = new EhrAddOnColumnParameters("total_cases", "Total", "", "03");
-	//		return Arrays.asList(NEW_CASES, REVISIT_CASES, TOTAL_CASES);
-	//	}
 	
 	private List<EhrAddOnColumnParameters> getSpecialClinicsCategories() {
 		EhrAddOnColumnParameters NEW_CASES = new EhrAddOnColumnParameters("new_cases", "NEW", "state=NEW", "01");

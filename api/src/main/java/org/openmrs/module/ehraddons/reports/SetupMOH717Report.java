@@ -25,8 +25,8 @@ public class SetupMOH717Report extends AbstractReportBuilder {
 	private Moh717Dataset moh717Dataset;
 	
 	@Autowired
-	public SetupMOH717Report(Moh717Dataset moh717DatasetDefinition) {
-		this.moh717Dataset = moh717DatasetDefinition;
+	public SetupMOH717Report(Moh717Dataset moh717Dataset) {
+		this.moh717Dataset = moh717Dataset;
 	}
 	
 	@Override
