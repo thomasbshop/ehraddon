@@ -11,7 +11,7 @@ import org.openmrs.module.ehraddons.reporting.library.dimesions.AgeDimensionCoho
 import org.openmrs.module.ehraddons.reporting.library.dimesions.EhrCommonDimension;
 import org.openmrs.module.ehraddons.reporting.library.indicator.EhrGeneralIndicator;
 import org.openmrs.module.ehraddons.reporting.utils.EhrAddonUtils;
-import org.openmrs.module.ehraddons.reporting.library.dataset.BaseDataSet.ColumnParameters;
+//import org.openmrs.module.ehraddons.reporting.library.dataset.BaseDataSet.EhrAddOnColumnParameters;
 import org.openmrs.module.reporting.dataset.definition.CohortIndicatorDataSetDefinition;
 import org.openmrs.module.reporting.dataset.definition.DataSetDefinition;
 import org.openmrs.module.reporting.indicator.CohortIndicator;
@@ -77,7 +77,7 @@ public class Moh717Dataset extends EhrAddOnBaseDataSet {
 		    EhrAddonUtils.map(
 		        ehrGeneralIndicator.getIndicator("Casuality CLINIC",
 		            EhrAddonUtils.map(moh717CohortDefination.getPatientsQueuedAsCasuality(), mappings)), mappings),
-		    getSpecialClinicsEhrAddOnColumnParameters());
+		    getSpecialClinicsCategories());
 		// Special clinic
 		// ENT Clinic - Concept_id 5119
 		//        addRow(
@@ -272,47 +272,54 @@ public class Moh717Dataset extends EhrAddOnBaseDataSet {
 		return dsd;
 	}
 	
-	private List<ColumnParameters> getAdultChildrenColumns() {
+	private List<EhrAddOnColumnParameters> getAdultChildrenColumns() {
 		// Male
-		ColumnParameters over5YearsMaleN = new ColumnParameters("over5YMN", "Over 5 Years Male - NEW",
+		EhrAddOnColumnParameters over5YearsMaleN = new EhrAddOnColumnParameters("over5YMN", "Over 5 Years Male - NEW",
 		        "gender=M|age=5+|state=NEW", "01");
-		ColumnParameters over5YearsMaleR = new ColumnParameters("over5YMR", "Over 5 Years Male - REVISIT",
+		EhrAddOnColumnParameters over5YearsMaleR = new EhrAddOnColumnParameters("over5YMR", "Over 5 Years Male - REVISIT",
 		        "gender=M|age=5+|state=RVT", "02");
-		ColumnParameters under5YearsMaleN = new ColumnParameters("under5YMN", "Under 5 Years Male - NEW",
+		EhrAddOnColumnParameters under5YearsMaleN = new EhrAddOnColumnParameters("under5YMN", "Under 5 Years Male - NEW",
 		        "gender=M|age=<5|state=NEW", "03");
-		ColumnParameters under5YearsMaleR = new ColumnParameters("under5YMR", "Under 5 Years Male - REVISIT",
-		        "gender=M|age=<5|state=RVT", "04");
-		ColumnParameters totalMale = new ColumnParameters("totalM", "Total Male", "gender=M", "05");
+		EhrAddOnColumnParameters under5YearsMaleR = new EhrAddOnColumnParameters("under5YMR",
+		        "Under 5 Years Male - REVISIT", "gender=M|age=<5|state=RVT", "04");
+		EhrAddOnColumnParameters totalMale = new EhrAddOnColumnParameters("totalM", "Total Male", "gender=M", "05");
 		// Female
-		ColumnParameters over5YearsFemaleN = new ColumnParameters("over5YFN", "Over 5 Years Female - NEW",
+		EhrAddOnColumnParameters over5YearsFemaleN = new EhrAddOnColumnParameters("over5YFN", "Over 5 Years Female - NEW",
 		        "gender=F|age=5+|state=NEW", "06");
-		ColumnParameters over5YearsFemaleR = new ColumnParameters("over5YFR", "Over 5 Years Female - REVISIT",
-		        "gender=F|age=5+|state=RVT", "07");
-		ColumnParameters under5YearsFemaleN = new ColumnParameters("under5YFN", "Under 5 Years Female - NEW",
-		        "gender=F|age=<5|state=NEW", "08");
-		ColumnParameters under5YearsFemaleR = new ColumnParameters("under5YFR", "Under 5 Years Female - REVISIT",
-		        "gender=F|age=<5|state=RVT", "09");
-		ColumnParameters over60YearsNew = new BaseDataSet.ColumnParameters("over60new", "Over 60 Years - NEW",
-		        "age=>60|state=NEW", "11");
-		ColumnParameters over60YearsReattendance = new ColumnParameters("over60reatt", "Over 60 Years - REVISIT",
-		        "age=>60|state=RVT", "12");
-		ColumnParameters totalFemale = new ColumnParameters("totalF", "Total Female", "gender=F", "10");
+		EhrAddOnColumnParameters over5YearsFemaleR = new EhrAddOnColumnParameters("over5YFR",
+		        "Over 5 Years Female - REVISIT", "gender=F|age=5+|state=RVT", "07");
+		EhrAddOnColumnParameters under5YearsFemaleN = new EhrAddOnColumnParameters("under5YFN",
+		        "Under 5 Years Female - NEW", "gender=F|age=<5|state=NEW", "08");
+		EhrAddOnColumnParameters under5YearsFemaleR = new EhrAddOnColumnParameters("under5YFR",
+		        "Under 5 Years Female - REVISIT", "gender=F|age=<5|state=RVT", "09");
+		EhrAddOnColumnParameters over60YearsNew = new EhrAddOnBaseDataSet.EhrAddOnColumnParameters("over60new",
+		        "Over 60 Years - NEW", "age=>60|state=NEW", "11");
+		EhrAddOnColumnParameters over60YearsReattendance = new EhrAddOnColumnParameters("over60reatt",
+		        "Over 60 Years - REVISIT", "age=>60|state=RVT", "12");
+		EhrAddOnColumnParameters totalFemale = new EhrAddOnColumnParameters("totalF", "Total Female", "gender=F", "10");
 		return Arrays.asList(over5YearsMaleN, over5YearsMaleR, under5YearsMaleN, under5YearsMaleR, totalMale,
 		    over5YearsFemaleN, over5YearsFemaleR, under5YearsFemaleN, under5YearsFemaleR, over60YearsNew,
 		    over60YearsReattendance, totalFemale);
 	}
 	
-	private List<EhrAddOnColumnParameters> getSpecialClinicsEhrAddOnColumnParameters() {
+	//	private List<EhrAddOnColumnParameters> getSpecialClinicsEhrAddOnColumnParameters() {
+	//		EhrAddOnColumnParameters NEW_CASES = new EhrAddOnColumnParameters("new_cases", "NEW", "state=NEW", "01");
+	//		EhrAddOnColumnParameters REVISIT_CASES = new EhrAddOnColumnParameters("revisit_cases", "REVISIT", "state=RVT", "02");
+	//		EhrAddOnColumnParameters TOTAL_CASES = new EhrAddOnColumnParameters("total_cases", "Total", "", "03");
+	//		return Arrays.asList(NEW_CASES, REVISIT_CASES, TOTAL_CASES);
+	//	}
+	
+	private List<EhrAddOnColumnParameters> getSpecialClinicsCategories() {
 		EhrAddOnColumnParameters NEW_CASES = new EhrAddOnColumnParameters("new_cases", "NEW", "state=NEW", "01");
 		EhrAddOnColumnParameters REVISIT_CASES = new EhrAddOnColumnParameters("revisit_cases", "REVISIT", "state=RVT", "02");
 		EhrAddOnColumnParameters TOTAL_CASES = new EhrAddOnColumnParameters("total_cases", "Total", "", "03");
 		return Arrays.asList(NEW_CASES, REVISIT_CASES, TOTAL_CASES);
 	}
 	
-	private List<ColumnParameters> getMchClientsCategories() {
-		ColumnParameters NEW_CASES = new ColumnParameters("new_cases", "NEW", "state=NEW", "01");
-		ColumnParameters REVISIT_CASES = new ColumnParameters("revisit_cases", "REVISIT", "state=RVT", "02");
-		ColumnParameters TOTAL_CASES = new ColumnParameters("total_cases", "Total", "", "03");
+	private List<EhrAddOnColumnParameters> getMchClientsCategories() {
+		EhrAddOnColumnParameters NEW_CASES = new EhrAddOnColumnParameters("new_cases", "NEW", "state=NEW", "01");
+		EhrAddOnColumnParameters REVISIT_CASES = new EhrAddOnColumnParameters("revisit_cases", "REVISIT", "state=RVT", "02");
+		EhrAddOnColumnParameters TOTAL_CASES = new EhrAddOnColumnParameters("total_cases", "Total", "", "03");
 		return Arrays.asList(NEW_CASES, REVISIT_CASES, TOTAL_CASES);
 	}
 }
