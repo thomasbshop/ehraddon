@@ -11,28 +11,4 @@
 	<packaging>jar</packaging>
 	<name>EHR add on API</name>
 	<description>API project for EHR add on</description>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.openmrs.module</groupId>
-			<artifactId>kenyacore-api</artifactId>
-			<version>${kenyacoreVersion}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openmrs.module</groupId>
-			<artifactId>calculation-api</artifactId>
-			<version>${calculationVersion}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openmrs.module</groupId>
-			<artifactId>reporting-api</artifactId>
-			<version>${reportingVersion}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.openmrs.module</groupId>
-			<artifactId>uiframework-api</artifactId>
-			<version>${uiframeworkVersion}</version>
-		</dependency>
-
-	</dependencies>
 </project>

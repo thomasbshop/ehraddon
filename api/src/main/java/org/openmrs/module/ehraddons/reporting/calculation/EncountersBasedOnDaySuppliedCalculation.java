@@ -1,20 +1,23 @@
 package org.openmrs.module.ehraddons.reporting.calculation;
 
-import org.openmrs.Encounter;
+import org.openmrs.Visit;
 import org.openmrs.calculation.patient.PatientCalculationContext;
 import org.openmrs.calculation.result.CalculationResultMap;
 import org.openmrs.calculation.result.ListResult;
 import org.openmrs.module.kenyacore.calculation.AbstractPatientCalculation;
 import org.openmrs.module.kenyacore.calculation.BooleanResult;
 import org.openmrs.module.kenyacore.calculation.CalculationUtils;
-import org.openmrs.module.kenyacore.calculation.Calculations;
-import org.springframework.stereotype.Component;
+import org.openmrs.module.kenyacore.report.data.patient.definition.VisitsForPatientDataDefinition;
+import org.openmrs.module.reporting.common.TimeQualifier;
 
 import java.text.Format;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
-@Component
 public class EncountersBasedOnDaySuppliedCalculation extends AbstractPatientCalculation {
 	
 	@Override
@@ -22,21 +25,26 @@ public class EncountersBasedOnDaySuppliedCalculation extends AbstractPatientCalc
 	        PatientCalculationContext context) {
 		CalculationResultMap resultMap = new CalculationResultMap();
 		Integer day = (Integer) parameterValues.get("day");
-		Date startDate = null;
-		Date endDate = (Date) context.getFromCache("onOrBefore");
-		if (endDate != null) {
-			startDate = getDateAdayEarlier(getDateBasedOnValue(endDate, 1), -1);
-		}
-		CalculationResultMap allEncounters = Calculations.allEncounters(null, cohort, context);
+		
+		Calendar amonthAgo = Calendar.getInstance();
+		amonthAgo.setTime(context.getNow());
+		amonthAgo.add(Calendar.MONTH, -1);
+		
+		VisitsForPatientDataDefinition visitsDef = new VisitsForPatientDataDefinition();
+		visitsDef.setWhich(TimeQualifier.ANY);
+		visitsDef.setStartedOnOrAfter(amonthAgo.getTime());
+		visitsDef.setStartedOnOrBefore(context.getNow());
+		
+		CalculationResultMap visitData = CalculationUtils.evaluateWithReporting(visitsDef, cohort, parameterValues, null,
+		    context);
 		for (Integer pId : cohort) {
 			boolean found = false;
-			ListResult listResult = (ListResult) allEncounters.get(pId);
-			List<Encounter> encounterList = CalculationUtils.extractResultValues(listResult);
-			for (Encounter encounter : encounterList) {
+			ListResult listResult = (ListResult) visitData.get(pId);
+			List<Visit> visitList = CalculationUtils.extractResultValues(listResult);
+			for (Visit visit : visitList) {
 				if (day != null
-				        && endDate != null
-				        && formatDate(encounter.getEncounterDatetime())
-				                .equals(formatDate(getDateBasedOnValue(endDate, day)))) {
+				        && formatDate(visit.getStartDatetime()).equals(
+				            formatDate(getDateBasedOnValue(context.getNow(), day)))) {
 					found = true;
 					break;
 				}
@@ -56,20 +64,6 @@ public class EncountersBasedOnDaySuppliedCalculation extends AbstractPatientCalc
 		calendar1.set(year, month, day);
 		
 		return calendar1.getTime();
-	}
-	
-	private Date getDateAdayEarlier(Date date, int days) {
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTime(date);
-		calendar.add(Calendar.DATE, days);
-		return calendar.getTime();
-	}
-	
-	private String formatDateWithTime(Date date) {
-		
-		Format formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-		
-		return formatter.format(date);
 	}
 	
 	private String formatDate(Date date) {

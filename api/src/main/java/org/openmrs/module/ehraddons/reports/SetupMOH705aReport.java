@@ -31,7 +31,7 @@ public class SetupMOH705aReport extends AbstractReportBuilder {
 	@Override
 	protected List<Parameter> getParameters(ReportDescriptor reportDescriptor) {
 		return Arrays.asList(new Parameter("startDate", "Start Date", Date.class), new Parameter("endDate", "End Date",
-		        Date.class), new Parameter("dateBasedReporting", "", String.class));
+		        Date.class));
 	}
 	
 	@Override

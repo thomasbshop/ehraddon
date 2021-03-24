@@ -1,30 +1,30 @@
 package org.openmrs.module.ehraddons.reporting.library.indicator;
 
-import org.openmrs.module.ehraddons.reporting.library.cohorts.Moh705aCohortDefinition;
+import org.openmrs.module.ehraddons.reporting.library.cohorts.Moh705bCohortDefinition;
 import org.openmrs.module.reporting.indicator.CohortIndicator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-import static org.openmrs.module.ehraddons.utils.EhrReportingUtils.cohortIndicator;
 import static org.openmrs.module.kenyacore.report.ReportUtils.map;
+import static org.openmrs.module.kenyaemr.reporting.EmrReportingUtils.cohortIndicator;
 
 @Component
-public class Moh705aIndicatorDefinition {
+public class Moh705bIndicatorDefinition {
 	
-	private Moh705aCohortDefinition moh705aCohortDefinition;
+	private Moh705bCohortDefinition moh705bCohortDefinition;
 	
 	@Autowired
-	public Moh705aIndicatorDefinition(Moh705aCohortDefinition moh705aCohortDefinition) {
-		this.moh705aCohortDefinition = moh705aCohortDefinition;
+	public Moh705bIndicatorDefinition(Moh705bCohortDefinition moh705bCohortDefinition) {
+		this.moh705bCohortDefinition = moh705bCohortDefinition;
 	}
 	
 	//Diagnonosis
 	public CohortIndicator getAllPatientsWithDiagnosis(List<Integer> list, int day) {
 		return cohortIndicator(
 		    "Diagnosis",
-		    map(moh705aCohortDefinition.getChildrenPatientsWhoHaveDiagnosisOnAgivenDay(list, day),
+		    map(moh705bCohortDefinition.getAdultPatientsWhoHaveDiagnosisOnAgivenDay(list, day),
 		        "startDate=${startDate},endDate=${endDate}"));
 	}
 }

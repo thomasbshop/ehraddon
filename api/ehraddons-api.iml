@@ -6,6 +6,7 @@
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
           <factory-entry name="Entities" />
+          <factory-entry name="ehraddons-api" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
@@ -30,29 +31,29 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.openmrs.module:kenyacore-api:2.4.1" level="project" />
-    <orderEntry type="library" name="Maven: org.openmrs.module:calculation-api:1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.openmrs.module:reporting-api:0.9.8.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.poi:poi:3.12" level="project" />
-    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.9" level="project" />
-    <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz:2.1.1" level="project" />
-    <orderEntry type="library" name="Maven: joda-time:joda-time:2.3" level="project" />
-    <orderEntry type="library" name="Maven: com.github.jknack:handlebars:1.1.2" level="project" />
-    <orderEntry type="library" name="Maven: org.antlr:antlr4-runtime:4.1" level="project" />
-    <orderEntry type="library" name="Maven: org.mozilla:rhino:1.7R4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.poi:poi-ooxml:3.12" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.poi:poi-ooxml-schemas:3.12" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.xmlbeans:xmlbeans:2.6.0" level="project" />
-    <orderEntry type="library" name="Maven: org.openmrs.module:uiframework-api:3.8" level="project" />
-    <orderEntry type="library" name="Maven: org.owasp.encoder:encoder:1.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.openmrs.module:calculation-api:1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.openmrs.module:kenyacore-api:2.4.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.openmrs.module:reporting-api:0.9.8.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.poi:poi:3.12" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-codec:commons-codec:1.9" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.quartz-scheduler:quartz:2.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: joda-time:joda-time:2.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.jknack:handlebars:1.1.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.antlr:antlr4-runtime:4.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mozilla:rhino:1.7R4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.poi:poi-ooxml:3.12" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.poi:poi-ooxml-schemas:3.12" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.xmlbeans:xmlbeans:2.6.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.openmrs.module:serialization.xstream-api:0.2.7" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.openmrs.module:kenyaemr-api:17.0.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.sf.opencsv:opencsv:2.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.openmrs.module:uiframework-api:3.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.owasp.encoder:encoder:1.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.openmrs.api:openmrs-api:1.11.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-collections:commons-collections:3.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.commons:commons-lang3:3.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-beanutils:commons-beanutils:1.7.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-io:commons-io:1.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.azeckoski:reflectutils:0.9.14" level="project" />
