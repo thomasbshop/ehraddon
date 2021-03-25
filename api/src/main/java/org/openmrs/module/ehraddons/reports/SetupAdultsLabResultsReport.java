@@ -22,7 +22,6 @@ import java.util.List;
 public class SetupAdultsLabResultsReport extends AbstractHybridReportBuilder {
 	
 	@Override
-
 	protected Mapped<CohortDefinition> buildCohort(HybridReportDescriptor hybridReportDescriptor,
 	        PatientDataSetDefinition patientDataSetDefinition) {
 		return null;
