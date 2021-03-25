@@ -1,5 +1,6 @@
 package org.openmrs.module.ehraddons.reports;
 
+import org.openmrs.module.ehraddons.reporting.library.queries.LabReportQueries;
 import org.openmrs.module.kenyacore.report.HybridReportDescriptor;
 import org.openmrs.module.kenyacore.report.ReportDescriptor;
 import org.openmrs.module.kenyacore.report.ReportUtils;
@@ -21,6 +22,7 @@ import java.util.List;
 public class SetupAdultsLabResultsReport extends AbstractHybridReportBuilder {
 	
 	@Override
+
 	protected Mapped<CohortDefinition> buildCohort(HybridReportDescriptor hybridReportDescriptor,
 	        PatientDataSetDefinition patientDataSetDefinition) {
 		return null;
@@ -30,7 +32,7 @@ public class SetupAdultsLabResultsReport extends AbstractHybridReportBuilder {
 	protected List<Mapped<DataSetDefinition>> buildDataSets(ReportDescriptor descriptor, ReportDefinition report) {
 		SqlDataSetDefinition dsd = new SqlDataSetDefinition();
 		dsd.setName("labadults");
-		dsd.setSqlQuery("SELECT * FROM patient");
+		dsd.setSqlQuery(LabReportQueries.getLabAdultsResultsQuery());
 		return Arrays.asList(ReportUtils.map((DataSetDefinition) dsd, ""));
 	}
 }
